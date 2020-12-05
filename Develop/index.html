@@ -30,13 +30,30 @@
       <div id="currentDay" class=""></div>
       <div class="date"></div>
     </header>
-    <div class="container d-flex flex-row border border-secondary">
+    <div class="container d-flex flex-column border border-secondary">
       <!-- Timeblocks go here -->
-      <div class="hour mr-2"></div>
-      <div class="row dayBlock present" id="dayBlock"></div>
+      <!--Start of Blocks-->
+      
+    
+      <div class="row dayBlock align-self-center" id="dayBlock">
+        
+        <div class="hour">
+          <p class="timeBlock text-right" id="hour-block">3PM</p>
+        </div>
+        <div class="description"> </div>
+        <div class="saveBtn"></div>
+      
+      </div>
+
+    <div class= "row align-self-center">
+      <div class="hour">
+      <p class="timeBlock" id="hour-block">3PM</p>
+      </div>
+      <div class="row dayBlock" id="dayBlock"></div>
       <div class="saveBtn"></div>
     </div>
-
+    
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
