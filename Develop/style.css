@@ -35,6 +35,10 @@ textarea{
   display: none;
 }
 
+textarea {
+  width: 400px;
+}
+
 .row {
   white-space: pre-wrap;
   height: 80px;

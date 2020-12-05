@@ -3,6 +3,7 @@ var hourBlock = document.getElementById("hour-block")
 var hourTime = hourBlock.innerHTML
 var dayBlock = document.getElementById("dayBlock")
 var container = document.getElementById("container")
+var description = document.getElementById("description")
 var workHours = 2
 var t = new Date();
 var i = 0
@@ -12,8 +13,10 @@ for (let index = 0; index < time.length; index++) {
 $(hourBlock).text(time[i++])
 $(dayBlock).attr('id', hourBlock.innerHTML);
 $(dayBlock).clone(true).appendTo(container);
-$(dayBlock).clone()
+$(dayBlock).clone().attr('class', 'hide')
+
 }
+
 
 
 
