@@ -27,12 +27,16 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <div id="currentDay" class=""></div>
+      <div class="date"></div>
     </header>
-    <div class="container">
-      <div class="row hourBlock present" id="hourBlock"></div>
+    <div class="container d-flex flex-row border border-secondary">
       <!-- Timeblocks go here -->
+      <div class="hour mr-2"></div>
+      <div class="row dayBlock present" id="dayBlock"></div>
+      <div class="saveBtn"></div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
