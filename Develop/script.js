@@ -4,8 +4,9 @@ var hourTime = hourBlock.innerHTML
 var dayBlock = document.getElementById("dayBlock")
 var container = document.getElementById("container")
 var description = document.getElementById("description") //FORM
-var taskInfo = document.querySelectorAll('textarea')
-var taskButton = document.getElementById("saveBtn") //INPUT BUTTON
+var taskInfo = document.querySelector('textarea')
+var taskButton = document.querySelector('button') //INPUT BUTTON
+var taskButton10am = document.getElementById("10AM")
 
 var workHours = 8
 var t = new Date();
@@ -17,18 +18,25 @@ const button = document.querySelector('button')
 const input = document.getElementById('')
 
 // localStorage.clear()
-console.log(localStorage)
+// console.log(localStorage)
 
 //CLONING HOUR BLOCKS
 for (let index = 0; index < time.length; index++) {
-
 $(hourBlock).text(time[i++])
 $(dayBlock).attr('id', hourBlock.innerHTML);
 $(taskInfo).attr('id', hourBlock.innerHTML);
-$(dayBlock).clone().appendTo(container);
-
-
+$(taskInfo).attr('name', hourBlock.innerHTML)
+$(taskButton).attr('id', hourBlock.innerHTML)
+$(dayBlock).clone(true, true).appendTo(container);
 }
+
+//SETTING ITEM WITH CORROSPONDING TEXT AREA
+$('button').click(function (e) { 
+    e.preventDefault();
+    // localStorage.setItem($(this).attr('id'), $(taskInfo).val())
+    
+    console.log($(this).closest(taskInfo).val())
+});
 
 
 
@@ -51,7 +59,6 @@ events.forEach( event =>{
 //         dayBlock.classList.add("present")
 //     }
 // });
-
 
 
 
