@@ -1,4 +1,4 @@
-# Personal Note Taker:
+# Personal Daily Scheduler:
 
 
 
