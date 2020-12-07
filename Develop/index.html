@@ -30,11 +30,10 @@
       <div id="currentDay" class=""></div>
       <div class="date"></div>
     </header>
-    <div class="container d-flex flex-column border border-secondary" id="container">
+    <div class="container d-flex flex-column align-content-center" id="container">
       <!-- Timeblocks go here -->
       <!--Start of Blocks-->
-        
-        <div class="row dayBlock align-self-center" id="dayBlock">
+        <div class="row dayBlock align-self-center container" id="dayBlock">
         <!--9AM-->
         <div class="hour">
         <p class="timeBlock text-right" id="hour-block">9AM</p>
@@ -42,15 +41,12 @@
         <!--SAVE TASK-->
         <div class="description d-flex" id="description"> 
         <form class="d-flex">
-        <textarea class='border d-flex' id="taskInfo">
+        <textarea class='d-flex' id="taskInfo">
         </textarea >
+        <input class="saveBtn text-center btn" id="button5PM" type="submit" value="&#128190;"></input>
         </div>
-        <input class="saveBtn text-center btn" id="saveBtn" type="submit" value="&#128190;"></input>  
-                
         </form>
         </div>
-
-    
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

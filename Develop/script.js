@@ -1,4 +1,5 @@
-var time = ["9AM","10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"]
+var time = ["9AM","10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "GO TO TOP"]
+
 var hourBlock = document.getElementById("hour-block")
 var hourTime = hourBlock.innerHTML
 var dayBlock = document.getElementById("dayBlock")
@@ -16,7 +17,7 @@ var i = 0
 for (let index = 0; index < time.length; index++) {
 $(hourBlock).text(time[i++])
 $(hourBlock).attr('id', 'text' + hourBlock.innerHTML)
-$(dayBlock).attr('id', hourBlock.innerHTML);
+$(dayBlock).attr('id', 'hour' + hourBlock.innerHTML);
 $(taskInfo).attr('id', 'task' + hourBlock.innerHTML);
 $(taskInfo).attr('form', hourBlock.innerHTML)
 $(taskForm).attr('id', hourBlock.innerHTML);
@@ -25,7 +26,10 @@ $(taskButton).attr('id', 'button' + hourBlock.innerHTML);
 $(dayBlock).clone(true, true).appendTo(container);
 }
 
-$('#5PM').attr('class', 'hide')
+var lastBlock = document.getElementById("description")
+
+$(dayBlock).attr('class', 'hide')
+$(lastBlock).attr('class', 'hide')
 
 //BUTTONS AND TASKS ARE ASSIGNED TO VARIABLES
 var button9AM = document.getElementById("button9AM")
@@ -46,6 +50,7 @@ var button4PM = document.getElementById("button4PM")
 var task4PM = document.getElementById("task4PM")
 var button5PM = document.getElementById("button5PM")
 var task5PM = document.getElementById("task5PM")
+var task6PM = document.getElementById("task6PM")
 
 
 //SETTING ITEM WITH CORROSPONDING TEXT AREA
@@ -92,9 +97,9 @@ $(button4PM).click(function (e) {
 });
 
 $(button5PM).click(function (e) { 
-    e.preventDefault();
-    localStorage.setItem($(this).attr('id'),task5PM.value.trim())
-    console.log(task5PM.value.trim())
+e.preventDefault();
+localStorage.setItem($(this).attr('id'),task5PM.value.trim())
+console.log(task5PM.value.trim())
 });
 
 
@@ -145,7 +150,7 @@ events.forEach( event =>{
 });
 
 // HOURS INSIDE HOUR BLOCK
-let date = dayjs().format("hA");
+let date = dayjs().format("HHA");
 
 var text9AM = document.getElementById("text9AM")
 var text10AM = document.getElementById("text10AM")
@@ -153,7 +158,8 @@ var text11AM = document.getElementById("text11AM")
 var text2PM = document.getElementById("text2PM")
 var text4PM = document.getElementById("text4PM")
 
-
+console.log(date)
+console.log(date < '09AM')
 if (date === '09AM'){
 task9AM.classList.add("present")
 } else if (date < '09AM'){
@@ -187,46 +193,42 @@ task12PM.classList.add('past')
 }
 
 
-if (date === '01PM'){
+if (date === '13PM'){
 task1PM.classList.add("present")
-} else if (date < '01PM'){
+} else if (date < '13PM'){
 task1PM.classList.add('future')
-} else if (date > '01PM'){
+} else if (date > '13PM'){
 task1PM.classList.add('past')
 }
 
-if (date === '2PM'){
+if (date === '14PM'){
 task2PM.classList.add("present")
-} else if (date < '2PM'){
+} else if (date < '14PM'){
 task2PM.classList.add('future')
-} else if (date > '2PM'){
+} else if (date > '14PM'){
 task2PM.classList.add('past')
 }
 
-if (date === '3PM'){
+if (date === '15PM'){
 task3PM.classList.add("present")
-} else if (date < '3PM'){
+} else if (date < '15PM'){
 task3PM.classList.add('future')
-} else if (date > '3PM'){
+} else if (date > '15PM'){
 task3PM.classList.add('past')
 }
 
-if (date === '4PM'){
+if (date === '16PM'){
 task4PM.classList.add("present")
-} else if (date < '4PM'){
+} else if (date < '16PM'){
 task4PM.classList.add('future')
-} else if (date > '4PM'){
+} else if (date > '16PM'){
 task4PM.classList.add('past')
 }
 
-if (date === '5PM'){
+if (date === '16PM'){
 task5PM.classList.add("present")
-} else if (date < '5PM'){
+} else if (date < '16PM'){
 task5PM.classList.add('future')
-} else if (date > '5PM'){
+} else if (date > '16PM'){
 task5PM.classList.add('past')
 }
-
-
-
-
