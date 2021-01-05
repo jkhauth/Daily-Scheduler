@@ -1,7 +1,7 @@
 # Personal Daily Scheduler:
 
 ## Deployed Application
-<a src="http://jkhauth.com/Daily-Scheduler/">Application</a>
+http://jkhauth.com/Daily-Scheduler/
 
 <table>
 	<!--DESIGNING CODE-ENGINE-->
